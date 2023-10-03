@@ -1,0 +1,9 @@
+node_modules/
+.expo/
+assets
+app.json
+bable.config.js
+npm-debug.*
+
+# macOS
+.DS_Store

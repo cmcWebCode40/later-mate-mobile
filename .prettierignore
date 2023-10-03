@@ -1,0 +1,22 @@
+node_modules/
+.expo/
+assets
+app.json
+babel.config.js
+.eslintrc.json
+package.json
+tsconfig.json
+npm-debug.*
+.github
+README.md 
+metro.config.js
+
+.prettierrc
+
+# macOS
+.DS_Store
+eas.json
+jest.config.js
+global.d.ts
+app.config.js
+
