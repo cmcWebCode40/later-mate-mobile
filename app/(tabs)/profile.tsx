@@ -1,12 +1,12 @@
 import { Heading } from 'components/common/heading';
 import { ScreenLayout } from 'components/layout';
 
-const HomeScreen: React.FunctionComponent = () => {
+const ProfileScreen: React.FunctionComponent = () => {
   return (
     <ScreenLayout>
-      <Heading>HomeScreen</Heading>
+      <Heading>ProfileScreen</Heading>
     </ScreenLayout>
   );
 };
 
-export default HomeScreen;
+export default ProfileScreen;

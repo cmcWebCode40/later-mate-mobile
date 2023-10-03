@@ -1,55 +1,68 @@
-import FontAwesome from '@expo/vector-icons/FontAwesome';
-import { Link, Tabs } from 'expo-router';
-import { Pressable, useColorScheme } from 'react-native';
+import { Heading, Icon } from 'components/common';
+import { Tabs } from 'expo-router';
+import React from 'react';
 
-import Colors from '../../constants/Colors';
 
-/**
- * You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
- */
-function TabBarIcon(props: {
-  name: React.ComponentProps<typeof FontAwesome>['name'];
-  color: string;
-}) {
-  return <FontAwesome size={28} style={{ marginBottom: -3 }} {...props} />;
-}
+type TabIconArgs = {
+  focused: boolean;
+};
 
-export default function TabLayout() {
-  const colorScheme = useColorScheme();
+const TabsLayout: React.FunctionComponent = () => {
+  // const { colors } = useTheme();
+
+  const tabsList = [
+    {
+      name: 'index',
+      icon: ({ focused }: TabIconArgs) => (
+        <Icon
+          name='account'
+        // color={focused ? colors.primary[100] : colors.grey[400]}
+        />
+      ),
+    },
+    {
+      name: 'links',
+      icon: ({ focused }: TabIconArgs) => <Icon name='account' />,
+    },
+    {
+      name: 'profile',
+      icon: ({ focused }: TabIconArgs) => (
+        <Icon
+          name='account'
+        // color={focused ? colors.primary[100] : colors.grey[400]}
+        />
+      ),
+    },
+  ];
 
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-      }}>
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Tab One',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
-          headerRight: () => (
-            <Link href="/modal" asChild>
-              <Pressable>
-                {({ pressed }) => (
-                  <FontAwesome
-                    name="info-circle"
-                    size={25}
-                    color={Colors[colorScheme ?? 'light'].text}
-                    style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
-                  />
-                )}
-              </Pressable>
-            </Link>
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="two"
-        options={{
-          title: 'Tab Two',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
-        }}
-      />
+        headerShown: false,
+      }}
+    >
+      {tabsList.map((item) => (
+        <Tabs.Screen
+          key={item.name}
+          name={item.name}
+          options={{
+            tabBarLabel: ({ focused }) => (
+              <Heading
+                className={`${focused
+                  ? 'text-primary-100 opacity-1 '
+                  : 'text-black-500 opacity-50'
+                  } capitalize font-medium text-sm `}
+                variant={`sm`}
+              >
+                {item.name}
+              </Heading>
+            ),
+            tabBarIcon: item.icon,
+          }}
+        />
+      ))}
     </Tabs>
   );
-}
+};
+
+export default TabsLayout;
