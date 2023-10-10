@@ -24,7 +24,7 @@ const Paragraph: React.FunctionComponent<ParagraphProps> = ({
 }) => {
   return (
     <StyledText
-      className={`${variantStyles[variant]} text-black-200 ${className}`}
+      className={`${variantStyles[variant]} text-slate-950 dark:text-slate-50 ${className}`}
       {...rest}
     />
   );

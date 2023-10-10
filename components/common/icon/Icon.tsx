@@ -1,34 +1,42 @@
+import { AntDesign, Entypo, Ionicons, MaterialIcons } from '@expo/vector-icons';
 import React from 'react';
-import { Iconify } from 'react-native-iconify';
 import { SvgProps } from 'react-native-svg';
+import GoogleIcon from './GoogleIcon';
 
-const validIconNames: Record<IconName, string> = {
-  account: 'prime:chevron-down',
-  // 'pepicons:internet',
-  // 'akar-icons:twitter-fill',
-  // 'mi:notification',
-  // 'ant-design:user-outlined',
-  // 'ic:outline-home',
-  // 'ic:outline-visibility-off',
-  // 'ic:outline-visibility',
-  // 'radix-icons:chevron-right',
-  // 'formkit:arrowleft',
-};
+const antDesignIcons = ['home', 'link', 'user', 'apple1', 'notification'];
+const materialIcons = ['visibility', 'visibility-off', 'email'];
+const socialsIcon = ['google'];
+const entyposIcon = ['chevron-thin-right'];
+const ionIcons = [
+  'star-outline',
+  'settings-outline',
+  'notifications-outline',
+  'share-outline',
+  'book-outline',
+  'arrow-back-sharp'
+];
 
-export type IconName =
-  | 'account'
-// | 'pepicons:internet'
-// | 'akar-icons:twitter-fill'
-// | 'mi:notification'
-// | 'ant-design:user-outlined'
-// | 'ic:outline-home'
-// | 'ic:outline-visibility-off'
-// | 'ic:outline-visibility'
-// | 'radix-icons:chevron-right'
-// | 'formkit:arrowleft';
+type AntDesignIconName = 'home' | 'link' | 'user' | 'apple1' | 'notification';
+type MaterialIconName = 'visibility' | 'visibility-off' | 'email';
+type SocialsIconName = 'google';
+type EntypoIconName = 'chevron-thin-right';
+type IonIconNames =
+  | 'star-outline'
+  | 'settings-outline'
+  | 'notifications-outline'
+  | 'share-outline'
+  | 'book-outline'
+  | 'arrow-back-sharp';
+
+export type IconNames =
+  | AntDesignIconName
+  | MaterialIconName
+  | SocialsIconName
+  | EntypoIconName
+  | IonIconNames;
 
 type IconProps = {
-  name: IconName;
+  name: IconNames;
   size?: number;
 } & SvgProps;
 
@@ -37,17 +45,48 @@ const Icon: React.FunctionComponent<IconProps> = ({
   size = 24,
   ...otherProps
 }) => {
-  if (!name || !Object.keys(validIconNames).includes(name)) {
-    throw new Error(`Icon with name (${name}) is not supported`);
+  if (antDesignIcons.includes(name)) {
+    return (
+      <AntDesign size={size} name={name as AntDesignIconName} {...otherProps} />
+    );
   }
 
-  console.log(validIconNames.account);
-
-  if (!validIconNames[name]) {
-    return null
+  if (materialIcons.includes(name)) {
+    return (
+      <MaterialIcons
+        size={size}
+        name={name as MaterialIconName}
+        {...otherProps}
+      />
+    );
   }
 
-  return <Iconify size={size} icon={'ic:outline-home'} {...otherProps} />;
+  if (entyposIcon.includes(name)) {
+    return <Entypo size={size} name={name as EntypoIconName} {...otherProps} />;
+  }
+
+  if (materialIcons.includes(name)) {
+    return (
+      <MaterialIcons
+        size={size}
+        name={name as MaterialIconName}
+        {...otherProps}
+      />
+    );
+  }
+
+  if (ionIcons.includes(name)) {
+    return <Ionicons size={size} name={name as IonIconNames} {...otherProps} />;
+  }
+
+  if (socialsIcon.includes(name)) {
+    const socialIconTypes: any = {
+      google: <GoogleIcon {...otherProps} size={size} />,
+    };
+    return socialIconTypes[name];
+  }
+
+  throw new Error(`Icon with name (${name}) is not supported`);
 };
 
 export default Icon;

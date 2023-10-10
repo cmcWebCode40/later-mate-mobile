@@ -24,7 +24,7 @@ const Heading: React.FunctionComponent<HeadingProps> = ({
   return (
     <StyledText
       className={`
-       text-black-600  ${className} ${variantStyles[variant]}`}
+      text-slate-950  dark:text-slate-50 ${className} ${variantStyles[variant]}`}
       {...rest}
     />
   );
