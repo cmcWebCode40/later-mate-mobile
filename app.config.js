@@ -49,7 +49,7 @@ export default {
     android: {
       adaptiveIcon: {
         foregroundImage: './assets/images/adaptive-icon.png',
-        backgroundColor: '#D93621',
+        backgroundColor: '#be185d',
       },
       package: 'com.cmcwebcode.latermate',
 

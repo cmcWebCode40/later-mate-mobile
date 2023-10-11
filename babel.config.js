@@ -13,6 +13,6 @@ module.exports = function (api) {
         },
         extensions: [".js", ".jsx", ".ts", ".tsx"],
       },
-    ], 'react-native-iconify/plugin', require.resolve("expo-router/babel")],
+    ], require.resolve("expo-router/babel")],
   };
 };
