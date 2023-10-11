@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { Heading } from 'components/common/heading';
 import { ScreenLayout } from 'components/layout';
 
