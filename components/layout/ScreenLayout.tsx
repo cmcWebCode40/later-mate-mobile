@@ -3,12 +3,17 @@ import { SafeAreaViewProps } from 'react-native-safe-area-context';
 
 import { StyledSafeAreaView } from 'components/nativewind-wrapper';
 
-const ScreenLayout: React.FunctionComponent<SafeAreaViewProps> = ({
+interface ScreenLayoutProps extends SafeAreaViewProps {
+  className?: string;
+}
+
+const ScreenLayout: React.FunctionComponent<ScreenLayoutProps> = ({
+  className,
   ...rest
 }) => {
   return (
     <StyledSafeAreaView
-      className={`flex-1 bg-white-100 pt-4 px-[25px]`}
+      className={`flex-1 bg-slate-50 dark:bg-gray-950 pt-4 px-5 ${className}`}
       {...rest}
     />
   );

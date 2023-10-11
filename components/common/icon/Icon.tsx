@@ -2,8 +2,15 @@ import { AntDesign, Entypo, Ionicons, MaterialIcons } from '@expo/vector-icons';
 import React from 'react';
 import { SvgProps } from 'react-native-svg';
 import GoogleIcon from './GoogleIcon';
-
-const antDesignIcons = ['home', 'link', 'user', 'apple1', 'notification'];
+const antDesignIcons = [
+  'home',
+  'link',
+  'user',
+  'apple1',
+  'notification',
+  'edit',
+  'search1',
+];
 const materialIcons = ['visibility', 'visibility-off', 'email'];
 const socialsIcon = ['google'];
 const entyposIcon = ['chevron-thin-right'];
@@ -13,10 +20,21 @@ const ionIcons = [
   'notifications-outline',
   'share-outline',
   'book-outline',
-  'arrow-back-sharp'
+  'bookmark',
+  'add',
+  'camera-outline',
+  'md-folder-outline',
+  'arrow-back-sharp',
 ];
 
-type AntDesignIconName = 'home' | 'link' | 'user' | 'apple1' | 'notification';
+type AntDesignIconName =
+  | 'home'
+  | 'link'
+  | 'user'
+  | 'apple1'
+  | 'notification'
+  | 'edit'
+  | 'search1';
 type MaterialIconName = 'visibility' | 'visibility-off' | 'email';
 type SocialsIconName = 'google';
 type EntypoIconName = 'chevron-thin-right';
@@ -26,7 +44,11 @@ type IonIconNames =
   | 'notifications-outline'
   | 'share-outline'
   | 'book-outline'
-  | 'arrow-back-sharp';
+  | 'arrow-back-sharp'
+  | 'add'
+  | 'md-folder-outline'
+  | 'camera-outline'
+  | 'bookmark';
 
 export type IconNames =
   | AntDesignIconName

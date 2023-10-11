@@ -44,10 +44,10 @@ const FormInput: React.FunctionComponent<FormInputProps> = forwardRef(
 
     const PasswordIcon = (
       <StyledPressable onPress={handlePasswordVisibility}>
-        {/* <Icon
-          color={colors.grey[200]}
+        <Icon
+          color={theme.colors.text}
           name={!passwordVisibility ? 'visibility' : 'visibility-off'}
-        /> */}
+        />
       </StyledPressable>
     );
 
@@ -59,25 +59,26 @@ const FormInput: React.FunctionComponent<FormInputProps> = forwardRef(
         <StyledView
           style={[
             isError && {
-              borderColor: theme.colors.primary[100],
+              borderColor: theme.colors.red[600],
               borderWidth: 1,
             },
           ]}
-          className='flex-row px-4 justify-between items-center border-none border-black bg-grey-500 rounded-md'
+          className='flex-row px-4 justify-between items-center border-none  bg-slate-100 dark:bg-transparent dark:border dark:border-gray-100 rounded-md'
         >
           {icon && <StyledView className='w-[10%]'>{icon}</StyledView>}
           <StyledTextInput
             {...rest}
             autoCapitalize={'none'}
-            className={`${className} items-center justify-between w-11/12 py-4`}
+            className={`${className} items-center justify-between w-11/12 py-4 placeholder:text-slate-950 dark:placeholder:text-slate-50`}
             ref={ref}
             editable={editable}
+            placeholderTextColor={theme.colors.text}
             secureTextEntry={hasPassword && passwordVisibility}
           />
           {hasPassword && PasswordIcon}
         </StyledView>
         {isError && (
-          <Paragraph variant='sm' className='text-primary-100 mt-0.5'>
+          <Paragraph variant='sm' className='text-red-600 mt-0.5'>
             {errorMessage}
           </Paragraph>
         )}
