@@ -1,11 +1,12 @@
 import { FlashList } from '@shopify/flash-list';
+import { useTheme } from 'libs/hooks';
 import React from 'react';
 import { FlatList } from 'react-native';
 
-import NotificationCard from './NotificationCard';
-import { StyledView } from 'components/nativewind-wrapper';
 import { EmptyPlaceHolder, Heading, Icon } from 'components/common';
-import { useTheme } from 'libs/hooks';
+import { StyledView } from 'components/nativewind-wrapper';
+
+import NotificationCard from './NotificationCard';
 
 interface NotificationListProps {
   data?: any[];
@@ -22,7 +23,9 @@ const NotificationList: React.FunctionComponent<NotificationListProps> = ({
   refreshing,
   data,
 }) => {
-  const { theme: { colors } } = useTheme()
+  const {
+    theme: { colors },
+  } = useTheme();
 
   if (isLoading) {
     return (
@@ -43,7 +46,12 @@ const NotificationList: React.FunctionComponent<NotificationListProps> = ({
   if (!data) {
     return (
       <StyledView className='flex-1 justify-center'>
-        <EmptyPlaceHolder icon={<Icon size={200} color={colors.text} name="notifications-outline" />} title='No notifications' />
+        <EmptyPlaceHolder
+          icon={
+            <Icon size={200} color={colors.text} name='notifications-outline' />
+          }
+          title='No notifications'
+        />
       </StyledView>
     );
   }

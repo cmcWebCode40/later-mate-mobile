@@ -1,7 +1,8 @@
+import { useTheme } from 'libs/hooks';
 import React from 'react';
+
 import { Heading, Icon, Paragraph } from 'components/common';
 import { StyledPressable, StyledView } from 'components/nativewind-wrapper';
-import { useTheme } from 'libs/hooks';
 
 interface ProfileDetailsCardProps {
   title?: string;
@@ -18,7 +19,9 @@ const ProfileDetailsCard: React.FunctionComponent<ProfileDetailsCardProps> = ({
   screen,
   editable,
 }) => {
-  const { theme: { colors } } = useTheme()
+  const {
+    theme: { colors },
+  } = useTheme();
   return (
     <StyledPressable>
       {() => (

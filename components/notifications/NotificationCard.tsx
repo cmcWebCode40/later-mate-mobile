@@ -1,10 +1,9 @@
-
+import { useTheme } from 'libs/hooks';
+import { getFormattedDate } from 'libs/utils';
 import React from 'react';
 
 import { Icon, Paragraph } from 'components/common';
-import { getFormattedDate } from 'libs/utils';
 import { StyledView } from 'components/nativewind-wrapper';
-import { useTheme } from 'libs/hooks';
 
 interface NotificationCardProps {
   title: string;
@@ -16,7 +15,9 @@ const NotificationCard: React.FunctionComponent<NotificationCardProps> = ({
   date,
   title,
 }) => {
-  const { theme: { colors } } = useTheme()
+  const {
+    theme: { colors },
+  } = useTheme();
   return (
     <StyledView className='flex-row items-center border rounded-lg py-3 border-gray-950 dark:border-slate-50'>
       <StyledView className='rounded-full bg-grey-500 p-4'>

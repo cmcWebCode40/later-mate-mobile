@@ -1,15 +1,16 @@
-import { IconNames } from 'components/common/icon/Icon';
-import { StyledView } from 'components/nativewind-wrapper';
 import { router } from 'expo-router';
 import { shareInfo } from 'libs/utils';
 import React from 'react';
 
+import { IconNames } from 'components/common/icon/Icon';
+import { StyledView } from 'components/nativewind-wrapper';
+
 import AccountOptionCard from './AccountOptionCard';
 
 type AccountData = {
-  title: string
-  screen: string
-  icon: IconNames
+  title: string;
+  screen: string;
+  icon: IconNames;
 };
 interface AccountOptionListProps {
   data: AccountData[];
@@ -18,15 +19,14 @@ interface AccountOptionListProps {
 const AccountOptionList: React.FunctionComponent<AccountOptionListProps> = ({
   data,
 }) => {
-
   const handleShareLink = () => {
     shareInfo('https://latermate.come');
   };
 
   const handleNavigate = (screen: string) => {
     if (screen === 'share') {
-      handleShareLink()
-      return
+      handleShareLink();
+      return;
     }
     router.push(screen);
   };

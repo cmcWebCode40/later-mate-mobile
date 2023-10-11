@@ -1,7 +1,8 @@
-import { Heading, Icon, Paragraph } from 'components/common';
-import { StyledPressable, StyledView } from 'components/nativewind-wrapper';
 import { useTheme } from 'libs/hooks';
 import React from 'react';
+
+import { Heading, Icon, Paragraph } from 'components/common';
+import { StyledPressable, StyledView } from 'components/nativewind-wrapper';
 
 const BookmarkedItemCard: React.FunctionComponent = () => {
   const {
@@ -13,9 +14,7 @@ const BookmarkedItemCard: React.FunctionComponent = () => {
       <StyledView className='space-y-3 ml-1'>
         <Heading className=''>Check tweet</Heading>
         <Paragraph className='text-sm'>label</Paragraph>
-        <Paragraph className='font-medium text-xs'>
-          12/12/2023
-        </Paragraph>
+        <Paragraph className='font-medium text-xs'>12/12/2023</Paragraph>
       </StyledView>
     </StyledPressable>
   );

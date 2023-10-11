@@ -11,11 +11,12 @@ interface ForgotPasswordFormProps {
 }
 
 const ForgotPasswordForm: React.FunctionComponent<ForgotPasswordFormProps> = ({
-  onSubmit,
   isLoading,
   error,
 }) => {
-  const handleSubmit = () => { };
+  const handleSubmit = () => {
+    return true;
+  };
 
   return (
     <StyledView className='mt-5'>

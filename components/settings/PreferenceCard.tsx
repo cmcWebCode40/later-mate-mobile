@@ -18,7 +18,9 @@ const PreferenceCard: React.FunctionComponent<PreferenceCardProps> = ({
   onToggle,
   isEnabled,
 }) => {
-  const { theme: { colors } } = useTheme();
+  const {
+    theme: { colors },
+  } = useTheme();
 
   return (
     <StyledView className='flex-row justify-between items-center py-4'>

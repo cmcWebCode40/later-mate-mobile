@@ -26,16 +26,18 @@ const Segment: React.FunctionComponent<SegmentProps> = ({
           key={item}
           onTouchStart={() => onSelect(index)}
           onPress={() => onSelect(index)}
-          className={`flex-1 py-3 ${index !== tab ? '' : 'flex-1 bg-slate-100 rounded-lg'
-            }`}
+          className={`flex-1 py-3 ${
+            index !== tab ? '' : 'flex-1 bg-slate-100 rounded-lg'
+          }`}
           style={index === tab && style.boxShadowStyle}
         >
           <Heading
             variant='sm'
-            className={`text-center ${index !== tab
-              ? 'text-gray-950-700 font-semibold'
-              : 'text-pink-600 font-semibold'
-              }`}
+            className={`text-center ${
+              index !== tab
+                ? 'text-gray-950-700 font-semibold'
+                : 'text-pink-600 font-semibold'
+            }`}
           >
             {item}
           </Heading>

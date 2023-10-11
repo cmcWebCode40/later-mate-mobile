@@ -3,8 +3,11 @@ import React from 'react';
 
 import AvatarImage from 'assets/images/user_avatar.png';
 import { Heading, Paragraph } from 'components/common';
-import { StyledImage, StyledPressable, StyledView } from 'components/nativewind-wrapper';
-
+import {
+  StyledImage,
+  StyledPressable,
+  StyledView,
+} from 'components/nativewind-wrapper';
 
 interface ProfileHeaderProps {
   firstName: string;
@@ -17,7 +20,6 @@ const ProfileHeader: React.FunctionComponent<ProfileHeaderProps> = ({
   firstName,
   lastName,
   email,
-  image,
 }) => {
   const router = useRouter();
   const imageSource = AvatarImage;
@@ -47,9 +49,7 @@ const ProfileHeader: React.FunctionComponent<ProfileHeaderProps> = ({
               {lastName}
             </Heading>
           </StyledView>
-          <Paragraph variant="sm">
-            {email}
-          </Paragraph>
+          <Paragraph variant='sm'>{email}</Paragraph>
         </StyledView>
       </StyledView>
     </StyledView>

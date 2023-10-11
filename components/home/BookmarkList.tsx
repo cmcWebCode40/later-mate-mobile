@@ -1,7 +1,9 @@
-import { FlashList } from '@shopify/flash-list'
-import { StyledView } from 'components/nativewind-wrapper'
-import React from 'react'
-import BookmarkedItemCard from './BookmarkedItemCard'
+import { FlashList } from '@shopify/flash-list';
+import React from 'react';
+
+import { StyledView } from 'components/nativewind-wrapper';
+
+import BookmarkedItemCard from './BookmarkedItemCard';
 
 const BookmarkList: React.FunctionComponent = () => {
   return (
@@ -13,7 +15,7 @@ const BookmarkList: React.FunctionComponent = () => {
       estimatedItemSize={200}
       showsHorizontalScrollIndicator={false}
     />
-  )
-}
+  );
+};
 
-export default BookmarkList
+export default BookmarkList;

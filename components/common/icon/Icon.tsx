@@ -1,7 +1,9 @@
 import { AntDesign, Entypo, Ionicons, MaterialIcons } from '@expo/vector-icons';
 import React from 'react';
 import { SvgProps } from 'react-native-svg';
+
 import GoogleIcon from './GoogleIcon';
+
 const antDesignIcons = [
   'home',
   'link',

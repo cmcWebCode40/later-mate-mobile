@@ -1,16 +1,23 @@
-import { StyledPressable, StyledTextInput, StyledView } from 'components/nativewind-wrapper';
 import { useTheme } from 'libs/hooks';
 import React, { useRef } from 'react';
 import { TextInput, TextInputProps } from 'react-native';
-import { Icon } from '../icon';
 
+import {
+  StyledPressable,
+  StyledTextInput,
+  StyledView,
+} from 'components/nativewind-wrapper';
+
+import { Icon } from '../icon';
 
 type SearchInput = TextInputProps;
 const SearchInput: React.FunctionComponent<SearchInput> = ({
   ...otherTextInputProps
 }) => {
   const inputRef = useRef<TextInput | null>(null);
-  const { theme: { colors } } = useTheme();
+  const {
+    theme: { colors },
+  } = useTheme();
 
   const handlePressedInput = () => {
     if (inputRef.current) {
